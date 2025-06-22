@@ -95,10 +95,33 @@ This service follows strict anemic domain principles with clear separation of co
 ## Running the Service
 
 ```bash
-./gradlew bootRun
+./mvnw spring-boot:run
 ```
 
 The service will start on port 8083.
+
+## Development
+
+### Prerequisites
+- Java 17+
+- MongoDB 4.4+
+- Maven 3.6+
+
+### Local Setup
+1. Start MongoDB locally or via Docker
+2. Configure application.yml with your MongoDB connection
+3. Run the application: `./mvnw spring-boot:run`
+4. Access health check: `http://localhost:8083/actuator/health`
+
+### Testing
+```bash
+./mvnw test
+```
+
+### Building
+```bash
+./mvnw clean package
+```
 
 ## Business Rules
 
@@ -151,4 +174,14 @@ The service will start on port 8083.
 - Spring Data MongoDB
 - Spring Cloud OpenFeign
 - Kotlin 1.9.20
+- Maven (build tool)
 - MongoDB (runtime dependency)
+
+## Integration
+
+This service integrates with:
+- **Learning Service**: For skill and exercise data
+- **Content Service**: For media asset references
+- **BFF Gateway**: Receives user context and forwards requests
+
+The service is designed to be fault-tolerant with fallback mechanisms for external service failures.
