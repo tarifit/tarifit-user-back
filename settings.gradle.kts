@@ -1,1 +1,0 @@
-rootProject.name = "tarifit-user-service-back"

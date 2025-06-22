@@ -10,16 +10,15 @@
     <packaging>jar</packaging>
 
     <name>Tarifit User Service</name>
-    <description>User management microservice for Tarifit Translator</description>
+    <description>User service microservice for Tarifit Translator</description>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <kotlin.version>1.9.24</kotlin.version>
+        <kotlin.version>1.9.20</kotlin.version>
         <kotlin.compiler.jvmTarget>17</kotlin.compiler.jvmTarget>
-        <spring-boot.version>3.3.3</spring-boot.version>
+        <spring-boot.version>3.2.0</spring-boot.version>
         <spring-cloud.version>2023.0.0</spring-cloud.version>
-        <json-smart.version>2.5.2</json-smart.version>
     </properties>
 
     <dependencyManagement>
@@ -37,11 +36,6 @@
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>net.minidev</groupId>
-                <artifactId>json-smart</artifactId>
-                <version>${json-smart.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -86,14 +80,8 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-test-junit5</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>de.flapdoodle.embed</groupId>
             <artifactId>de.flapdoodle.embed.mongo</artifactId>
-            <version>4.9.2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
